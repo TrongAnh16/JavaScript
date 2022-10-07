@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER FORM</title>
+</head>
+<style>
+    body{
+        background: rgb(255, 255, 255);
+    }
+    .khung{
+        max-width: 500px;
+        margin: auto;
+        background: rgb(255, 255, 255);
+        padding: 10px;
+        box-shadow: 0px 0px 10px 10px lightblue;
+    }
+</style>
+<body>
+   <div class="khung" style="width: 400px;height: 600px;margin-left: 100px;margin-right: 200px;margin-top: 50px;">
+        <div style="width: 400px;height: 20%;">
+            <h1 style="margin-top: 0px;font-size: x-large;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Order Form</h1>
+            <h2 style="margin-top: 0px;font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">What would you like to buy?</h2>
+            <select>
+                <option value = "  ">A</option>
+                <option>B (+  0.5$)</option>
+                <option>C (+  0.5$)</option>
+            </select>
+        </div>
+        
+        <br>
+
+        <div style="width: 400px;height: 20%;">
+            <h2 style="margin-top: 0px;font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">How many would you like to order?</h2>
+        <input type="radio" name="rd"/> 1 - $10 <br/>
+        <input type="radio" name="rd"/> 2 - $20 <br/>
+        <input type="radio" name="rd"/> 3 - $25 <br/>
+        </div>
+
+        <br>
+
+        <div style="width: 400px;height: 10%;">
+            <h2 style="margin-top: 0px;font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Name<span style="color: red">*</span></h2>
+            <input type = "text" name="firstname" placeholder="FirstName" size="15"/>
+            <input type = "text" name="lastname" placeholder="LastName" size="15"/>
+        </div>
+
+        <br>
+        <br>
+
+        <div style="width: 400px;height: 10%;">
+            <h2 style="margin-top: 0px;font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Email</h2>
+            <input type = "text" name="email" size="35"/>
+        </div>
+
+        <br>
+        <br>
+
+        <div style="width: 400px;height: 30%;">
+            <h2 style="margin-top: 0px;font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Phone Number</h2>
+            <input type = "text" name="phone1" size="5"/> -
+        <input type = "text" name="phone2" size="5"/> -
+        <input type = "text" name="phone3" size="5"/> <br><br>
+        <input type = "button" name="btSubmit" value="Submit"/>
+        </div>
+   </div> 
+</body>
+</html>
