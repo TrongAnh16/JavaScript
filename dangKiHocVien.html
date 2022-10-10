@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng kí học viên</title>
+</head>
+<style>
+.center {
+  margin: auto;
+  width: 800px;
+  height: 430px;
+  padding: 10px;
+  background-color: rgb(246, 241, 149);
+}
+.text{
+    background-color: rgb(152, 228, 236);
+    margin: auto;
+    width: 98%;
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(13, 46, 233);
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<body>
+    <div class="center">
+        <div>
+            <p class="text" style="margin-bottom: 20px;">ĐĂNG KÍ HỌC VIÊN</p>
+        </div>
+        <div>
+        <form action="http://demo.codegym.vn/6/registration_form/register.php">
+        <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;">Họ và tên</span>
+          <input style="margin-left: 34px;" type="text" name="yourname">
+          <br>
+          <br>
+          <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;">Ngày sinh</span>
+          <input style="margin-left: 32px;" type="text" name="birthday" size="15">
+          <br>
+          <br>
+          <label style="padding-left: 115px;"><input name="gender" type="radio"> Nam</label>
+          <label><input name="gender" type="radio"> Nữ</label>
+          <br>
+          <br>
+          <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;vertical-align: top;">Địa chỉ</span>
+          <textarea style="margin-left: 53px;" name="address" id="" cols="30" rows="5"></textarea>
+          <br>
+          <br>
+          <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;">Lớp</span>
+          <select style="height: 22px;margin-left: 72px;">
+            <option value ="">--Chọn lớp--</option>
+            <option>A</option>
+            <option>B</option>
+          </select>
+          <br>
+          <br>
+          <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;">Email</span>
+          <input style="margin-left: 59px;" type="text" name="email" size="15"><br><br>
+          <span style="color: rgb(30, 30, 225); font-family: Arial, Helvetica, sans-serif;">Điện thoại</span>
+          <input style="margin-left: 26px;" type="text" name="phone" size="15">
+          <br>
+          <br>
+        <input type="submit" value="Đăng kí">
+        <input type="reset" value="Nhập lại">
+        </form>
+        </div>
+    </div>
+</body>
+</html>
