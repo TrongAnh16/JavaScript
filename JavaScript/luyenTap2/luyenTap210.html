@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiền điện</title>
+  </head>
+  <!-- Các mốc tính tiền điện:
+1. Bậc 1 (0 đến 50kWh): 1.678 đồng/kWh
+2. Bậc 2 (51 đến 100kWh): 1.734 đồng/kWh
+3. Bậc 3 (101 đến 200 kWh): 2.014 đồng/kWh
+4. Bậc 4 (201 đến 300 kWh): 2.536 đồng/kWh
+5. Bậc 5 (301 đến 400 kWh): 2.834 đồng/kWh
+6. Bậc 6 (401 kWh trở lên): 2.927 đồng/kWh
+1kWh tương đương 1 chữ điện
+Tổng tiền điện: tổng tiền điện tính được cộng thêm 10% thuế VAT -->
+  <body>
+    <span>Nhập số chữ điện:</span>
+    <input type="number" id="sodien" /><br /><br />
+    <button onclick="check()">Tính tiền</button>
+    <p id="tiendien"></p>
+    <script>
+      function tinhDien(sodien) {
+        if (sodien > 0 && sodien <= 50) return (sodien * 1678);
+
+        if (sodien <= 100) return (50 * 1678 + (sodien - 50) * 17340);
+
+        if (sodien <= 200) return (50 * 1678 + 50 * 1734 + (sodien - 100) * 2014);
+
+        if (sodien <= 300) return (50 * 1678 + 50 * 1734 + 100 * 2014 + (sodien - 200) * 2536);
+
+        if (sodien <= 400) return ( 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (sodien - 300) * 2834);
+
+        return (50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (sodien - 400) * 2927);
+      }
+      function check(){
+        let sodien = document.getElementById("sodien").value;
+        let tiendien = tinhDien(sodien);                                                                      
+        document.getElementById("tiendien").innerText ="Số tiền phải trả: " + (tiendien + tiendien * 0.1).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +" VNĐ";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toán tử</title>
+</head>
+<body>
+<p>Tính diện tích hình chữ nhật</p>
+<button onclick="myFunction()">Tính toán</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+  let inputWidth = prompt("Enter the width");
+  let inputHeight = prompt("Enter the height");
+  let width = parseInt(inputWidth);
+  let height = parseInt(inputHeight);
+  let area = width * height;
+  document.write("The area is: " + area);
+}    
+</script>
+</body>
+</html>

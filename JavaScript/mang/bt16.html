@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 1.6</title>
+  </head>
+  <body>
+    <script>
+        let a = [2, 3, 5, 6, 34, 66, -3, 76, -2, -5];
+        let v = Number(prompt("Enter your guess number"));
+        for (let i = 0; i < a.length; i++) {
+        if (a.includes(v)) {
+          alert(`${v} is in the array`);
+        }else{
+          alert(`${v} is not in the array`);
+        }
+        break;
+      }
+    </script>
+  </body>
+</html>

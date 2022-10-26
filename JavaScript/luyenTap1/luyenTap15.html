@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học lực</title>
+</head>
+<body>
+    <h1>Xếp hạng học lực</h1>
+    <span>Nhập điểm kiểm tra: </span>
+    <input type="number" id="ktra"><br><br>
+    <span>Nhập điểm thi giữa kì:</span>
+    <input type="number" id="giuaki"><br><br>
+    <span>Nhập điểm thi cuối kì:</span>
+    <input type="number" id="cuoiki"><br><br>
+    <button onclick="check()">Xếp hạng</button>
+    <p id="rank"></p>
+    <script>
+        function check() {
+            let ktra = Number(document.getElementById("ktra").value);
+            let giuaki = Number(document.getElementById("giuaki").value);
+            let cuoiki = Number(document.getElementById("cuoiki").value);
+            let result;
+            result = (ktra + giuaki + cuoiki*2)/4;
+
+        if (0 <= result && result < 3.5) {
+            document.getElementById("rank").innerHTML = "Học lực yếu";
+        }else if (result< 6.5) {
+                document.getElementById("rank").innerHTML = "Học lực trung bình";
+                }else if (result < 8.5) {
+                    document.getElementById("rank").innerHTML = "Học lực khá";  
+                        }else if (result <= 10){
+                            document.getElementById("rank").innerHTML = "Học lực giỏi";
+                            }else{
+                                document.getElementById("rank").innerHTML = "Vui lòng nhập lại điểm trong khoảng 0 -10"; 
+                            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số lớn nhất</title>
+</head>
+<body>
+    <h1>Tìm giá trị lớn nhất của 3 số nguyên</h1>
+    <span>Nhập a: </span>
+    <input type="number" id="a"><br><br>
+    <span>Nhập b:</span>
+    <input type="number" id="b"><br><br>
+    <span>Nhập c:</span>
+    <input type="number" id="c"><br><br>
+    <button onclick="check()">Kiểm tra</button>
+    <p id="ktra"></p>
+    <script>
+        function check() {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            let c = Number(document.getElementById("c").value);
+
+        if (a > b && a > c) {
+            document.getElementById("ktra").innerHTML = a +" là số lớn nhất trong 3 số";
+        }else if (c > a) {
+            document.getElementById("ktra").innerHTML = c +" là số lớn nhất trong 3 số";
+        }else{
+            document.getElementById("ktra").innerHTML = b +" là số lớn nhất trong 3 số";  
+        }
+        }
+    </script>
+</body>
+</html>

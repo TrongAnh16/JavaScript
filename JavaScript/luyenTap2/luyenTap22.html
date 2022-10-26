@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển từ m sang feet</title>
+</head>
+<body>
+    <span>Nhập số m:</span>
+    <input type="number" id="dodai"><br><br>
+    <button onclick="change()">Chuyển đổi</button>
+    <p id="chuyendoi"></p>
+    <script>
+        function change() {
+            let dodai = document.getElementById("dodai").value;
+            let feet;
+            feet = dodai*3.2808;
+            document.getElementById("chuyendoi").innerHTML = dodai + " m bằng: " + feet.toFixed(3) + " ft";
+        }
+    </script>
+</body>
+</html>

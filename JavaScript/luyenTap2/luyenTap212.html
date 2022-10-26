@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lãi suất ngân hàng</title>
+</head>
+<body>
+    <span>Nhập số tiền (VNĐ):</span>
+    <input type="number" id="tien"><br><br>
+    <span>Nhập số tháng cho vay:</span>
+    <input type="number" id="thang"><br><br>
+    <span>Nhập lãi suất (%/năm):</span>
+    <input type="number" id="lai"><br><br>
+    <button onclick="calculate()">Kiểm tra</button>
+    <p id="bank"></p>
+    <script>
+        function calculate() {
+        let money = Number(document.getElementById("tien").value);
+        let thang = Number(document.getElementById("thang").value);
+        let lai = Number(document.getElementById("lai").value);
+        
+        money = money*((Math.pow(1 +  (lai/100)/12, thang)));
+        
+        document.getElementById("bank").innerHTML = "Số tiền nhận được: " + money.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " VNĐ";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế TNCN</title>
+</head>
+<body>
+    <span>Nhập thu nhập tính thuế (triệu đồng):</span>
+    <input type="number" id="money"><br><br>
+    <button onclick="calculate()">Kiểm tra</button>
+    <p id="thue"></p>
+    <script>
+        function tinhThue(money) {
+            if (money > 0 && money <= 5) return (0.05*money);
+            if (money <= 10) return (0.25 + (money - 5)*0.1);
+            if (money <= 18) return (0.75 + (money - 10)*0.15);
+            if (money <= 32) return (1.95 + (money - 18)*0.2);
+            if (money <= 52) return (4.75 + (money - 32)*0.25);
+            if (money <= 80) return (9.75 + (money - 52)*0.3);
+            return (10.15 + (money - 80)*0.35);
+        }
+        function calculate() {
+            let money = document.getElementById("money").value;
+            let tienthue = tinhThue(money);
+            document.getElementById("thue").innerText ="Số tiền thuế phải nộp là: " + tienthue + " triệu đồng";
+        }
+    </script>
+</body>
+</html>

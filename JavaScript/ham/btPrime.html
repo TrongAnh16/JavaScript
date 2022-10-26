@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check is prime</title>
+  </head>
+  <body>
+    <p id="prime"></p>
+    <script>
+        function isPrime(number) {
+        var checkPrime = true;
+        if (number < 2 || number % 1 != 0) {
+            checkPrime = false;
+        }
+        else{
+            for (i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    checkPrime  = false;
+                    break;
+                }
+            }
+        } 
+        return checkPrime;
+        }
+        let number = Number(prompt("Enter a check number"));
+        if (isPrime(number)) {
+            document.write(`${number} là số nguyên tố`);
+        }else{
+            document.write(`${number} không là số nguyên tố`);
+        }   
+        
+    </script>
+  </body>
+</html>

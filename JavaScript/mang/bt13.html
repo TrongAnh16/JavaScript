@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 1.3</title>
+  </head>
+
+  <body>
+    <script>
+      let a = [2, 3, 5, 6, 34, 66, 23, 76, 2, 5];
+      findMax(a);
+      function findMax() {
+        let max = a[0];
+        let sum = 0;
+        var avg = 0;
+        for (i = 0; i < a.length; ++i) {
+            sum = sum + a[i];
+          if (max < a[i]) {
+            max = a[i];
+          }
+        }
+        avg = sum / a.length;
+        document.write(`Giá trị max của mảng là: ${max} <br> 
+                        Giá trị trung bình của mảng là:  ${avg}`);
+      }
+    </script>
+  </body>
+</html>

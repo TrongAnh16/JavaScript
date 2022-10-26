@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương trình bậc 1</title>
+</head>
+<body>
+    <span>Nhập a:</span>
+    <input type="number" id="a"><br><br>
+    <span>Nhập b:</span>
+    <input type="number" id="b"><br><br>
+    <button onclick="calculate()">Tính toán</button>
+    <p id="nghiem"></p>
+    <script>
+        function calculate() {
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            if (a != 0 && b != 0) {
+                document.getElementById("nghiem").innerHTML = "Phương trình có 1 nghiệm là: x = "+ (-b/a);
+            }else if (a == 0 && b != 0) {
+                document.getElementById("nghiem").innerHTML = "Phương trình vô nghiệm";
+            }else if (a != 0 && b == 0){
+                document.getElementById("nghiem").innerHTML = "Phương trình có 1 nghiệm là: x = 0";
+            }else{
+                document.getElementById("nghiem").innerHTML = "Phương trình có vô số nghiệm";
+            }
+            
+            }
+        
+    </script>
+</body>
+</html>

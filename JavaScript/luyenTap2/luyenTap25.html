@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích tam giác vuông</title>
+</head>
+<body>
+    <span>Nhập chiều dài cạnh 1 (m):</span>
+    <input type="number" id="canh1"><br><br>
+    <span>Nhập chiều dài cạnh 2 (m):</span>
+    <input type="number" id="canh2"><br><br>
+    <button onclick="calculate()">Tính toán</button>
+    <p id="dientich"></p>
+    <script>
+    function calculate() {
+        let canh1 = document.getElementById("canh1").value;
+        let canh2 = document.getElementById("canh2").value;
+        let dientich;
+        dientich = (canh1*canh2)/2;
+        document.getElementById("dientich").innerHTML = "Diện tích tam giác vuông với chiều dài 2 cạnh kề lần lượt "+ canh1 + " m và "+ canh2 + " m là: "+ dientich + " mét vuông";
+    }
+    </script>
+</body>
+</html>

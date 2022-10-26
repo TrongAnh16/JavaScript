@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer feet to meters</title>
+</head>
+<body>
+    <script>
+        function footToMeters(foot){
+            let result;
+            result = 0.305 * foot;
+            return result;
+        }
+        function meterToFoots(meter){
+            let result;
+            result = 3.279 * meter;
+            return result;
+        }
+        let foot = Number(prompt("Enter the feet:"));
+        alert(`${foot} feet = ${footToMeters(foot)} meters`);
+        let meter = Number(prompt("Enter the meter:"));
+        alert(`${meter} meters = ${meterToFoots(meter)} feet`);
+
+    </script>
+</body>
+</html>

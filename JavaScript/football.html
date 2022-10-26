@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<body>
+    <div>
+        <img src="https://lzd-img-global.slatic.net/g/p/mdc/2220823f6f2d3daf1f05bd2cfb777a78.jpg_720x720q80.jpg_.webp" id="bongC1" style="width: 200px;height: 200px">
+    </div>
+    <p>Click button below to move the image to right</p><br>
+    <button onclick="moveRight()";>Click Me</button>
+    <script>
+        let imgC1 = null;
+        imgC1 = document.getElementById("bongC1");
+        function init() {
+            imgC1 = document.getElementById("bongC1");
+            imgC1.style.position = "relative";
+            imgC1.style.left = "0px";
+        }
+        function moveRight() {
+            imgC1.style.left = parseInt(imgC1.style.left) + 10 + "px";
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuổi</title>
+</head>
+<body>
+    <h1>Kiểm tra tuổi?</h1>
+    <span>Nhập tuổi: </span>
+    <input type="number" id="birth"><br><br>
+    <button onclick="check()">Kiểm tra</button>
+    <p id="ktra"></p>
+    <script>
+        function check() {
+            let birth = Number(document.getElementById("birth").value);
+
+        if (birth > 0 && birth < 16) {
+            document.getElementById("ktra").innerHTML = "học sinh này không đủ tuổi vào lớp 10";
+        }else{
+            document.getElementById("ktra").innerHTML = "";
+        }
+        }
+    </script>
+</body>
+</html>

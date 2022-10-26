@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi tiền</title>
+  </head>
+  <style>
+    table {
+      width: 800px;
+      text-align: center;
+    }
+    th,
+    td {
+      width: 200px;
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>
+          <input style="width: 120px" type="number" name="amount" id="am" />
+        </td>
+        <td>
+          <select id="from" style="width: 120px; height: 21px">
+            <option>Việt Nam</option>
+            <option>USA</option>
+          </select>
+        </td>
+        <td>
+          <select id="to" style="width: 120px; height: 21px">
+            <option>USA</option>
+            <option>Việt Nam</option>
+          </select>
+        </td>
+        <td>
+          <button onclick="showMessage()">Convert</button>
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <p id="tien"></p>
+    </div>
+    <script>
+      function showMessage() {
+        let amount = document.getElementById("am").value;
+        let f1 = document.getElementById("from").value;
+        let t1 = document.getElementById("to").value;
+        let result;
+        if (f1 == "Việt Nam" && t1 == "USA") {
+          result = "Result: " + amount / 23000;
+          
+        } 
+        else if (f1 == "Việt Nam") {
+          result = "Result: " + amount;
+        } else if (f1 == "USA" && t1 == "Việt Nam") {
+          result = "Result: " + amount * 23000;
+        } else {
+          result = "Result: " + amount;
+        }
+       document.getElementById("tien").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

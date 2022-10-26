@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me</title>
+</head>
+<style>
+    #ko{
+        position: absolute;
+        margin-left: 20px;
+        
+    }
+</style>
+<body>
+    <h1>Do you love me?</h1>
+    <button id="ok" onclick="yes()">Yes</button>
+    <button id="ko" onmouseover="no()">No</button>
+    <script>
+        function yes() {
+            alert("oh yeah!");
+        }
+        function no() {
+            let x = Math.floor(Math.random() * innerWidth);
+            let y = Math.floor(Math.random() * innerHeight);
+            document.getElementById("ko").style.left = x + "px";
+            document.getElementById("ko").style.top = y + "px";
+        }
+    </script>
+</body>
+</html>

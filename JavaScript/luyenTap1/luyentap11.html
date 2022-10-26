@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a chia hết cho b?</title>
+</head>
+<body>
+    <h1>Kiểm tra a có chia hết cho b không?</h1>
+    <span>Nhập a: </span>
+    <input type="number" id="a"><br><br>
+    <span>Nhập b:</span>
+    <input type="number" id="b"><br><br>
+    <button onclick="check()">Kiểm tra</button>
+    <p id="ktra"></p>
+    <script>
+        function check() {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+
+        if (a % b == 0) {
+            document.getElementById("ktra").innerHTML = "a chia hết cho b";
+        }else{
+            document.getElementById("ktra").innerHTML = "a không chia hết cho b";
+        }
+        }
+    </script>
+</body>
+</html>

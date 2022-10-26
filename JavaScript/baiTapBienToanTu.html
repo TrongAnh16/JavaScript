@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Biến Toán tử</title>
+</head>
+<body>
+<p>Tính tổng điểm và điểm trung bình</p>
+<button onclick="dTB()">Nhập điểm</button>
+<p id="diem"></p>
+<script>
+function dTB() {
+  let diemLy = +prompt("Nhập điểm Lý");
+  let diemHoa = +prompt("Nhập điểm Hóa");
+  let diemSinh = +prompt("Nhập điểm Sinh");
+ 
+  let dTB = (diemLy + diemHoa + diemSinh)/3;
+  let tong = diemLy + diemHoa + diemSinh;
+  document.getElementById("diem").innerHTML =
+    "Điểm trung bình = " + dTB.toFixed(2) + " Tổng điểm: " + tong;
+}    
+</script>
+
+<p>Chuyển đổi nhiệt độ C sang F</p>
+<button onclick="nhietdo()">Nhập độ C</button>
+<p id="doC"></p>
+<script>
+function nhietdo() {
+  let doC = +prompt("Nhập nhiệt độ C:");
+ 
+  let doF = ((9*doC)/5) + 32;
+
+  document.getElementById("doC").innerHTML =
+    doC +" độ C là "+ doF + " độ F";
+}    
+</script>
+
+
+<p>Tính diện tích hình tròn</p>
+<button onclick="dTichTron()">Nhập bán kính</button>
+<p id="dTich"></p>
+<script>
+function dTichTron() {
+  let r = +prompt("Nhập bán kính r:");
+ 
+  let dienTich = 3.14*r*r;
+
+  document.getElementById("dTich").innerHTML =
+    "Diện tích hình tròn là: " + dienTich.toFixed(2);
+}    
+</script>
+
+
+<p>Tính chu vi hình tròn</p>
+<button onclick="chuViTron()">Nhập bán kính</button>
+<p id="chuVi"></p>
+<script>
+function chuViTron() {
+  let r = +prompt("Nhập bán kính r:");
+ 
+  let chuVi = 2*3.14*r;
+
+  document.getElementById("chuVi").innerHTML =
+    "Chu vi hình tròn là: " + chuVi.toFixed(2);
+}    
+</script>
+</body>
+</html>

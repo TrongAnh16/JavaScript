@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày trong tháng</title>
+</head>
+<body>
+    <h1>Kiểm tra số ngày trong tháng</h1>
+    <input type="number" id="m">
+    <button onclick="showDay()">Check</button>
+    <p id="ktra"></p>
+    <script>
+        function showDay() {
+            let month = Number(document.getElementById("m").value);
+            let day;
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    day = "Tháng" + month + "có 31 ngày";
+                break;
+                case 2:
+                    day = "Tháng" + month + "có 28 ngày hoặc 29 ngày";
+                break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    day = "Tháng" + month + "có 30 ngày";
+                break;
+                default:
+                    day = "Vui lòng nhập lại số tháng chỉ trong phạm vi 1 - 12"
+            }
+            document.getElementById("ktra").innerHTML = day;
+        }
+    </script>
+</body>
+</html>

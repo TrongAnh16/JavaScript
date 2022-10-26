@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình vuông</title>
+</head>
+<body>
+    <span>Nhập độ dài cạnh a (m):</span>
+    <input type="number" id="a"><br><br>
+    <button onclick="calculate()">Tính toán</button>
+    <p id="dientich"></p>
+    <script>
+    function calculate() {
+        let a = document.getElementById("a").value;
+        let dientich;
+        dientich = a*a;
+        document.getElementById("dientich").innerHTML = "Diện tích hình vuông với cạnh a = "+ a + " m là: "+ dientich + " mét vuông";
+    }
+    </script>
+</body>
+</html>

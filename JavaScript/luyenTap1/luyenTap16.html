@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tiền hoa hồng</title>
+</head>
+<!-- Giả sử cách tính doanh số bán mỹ phẩm như sau:
+Mức 1: 0 - 200.000 => 2%
+Mức 2: Trên 200.000 - 500.000 => 5%
+Mức 3: Trên 500.000 => 10% -->
+<body>
+    <span>Nhập doanh số bán hàng (VNĐ):</span>
+    <input type="number" id="doanhso"><br><br>
+    <button onclick="check()">Tiền hoa hồng</button>
+    <p id="hoahong"></p>
+    <script>
+        function check() {
+            let doanhso = document.getElementById("doanhso").value;
+            let hoahong;
+            if (doanhso > 0 && doanhso <= 200000) {
+                hoahong = 200000 * 0.02 ;
+            }else if (doanhso > 200000 && doanhso <= 500000) {
+                        hoahong = (200000 * 0.02 + (500000 - 200000)*0.05)
+                    }else{
+                            hoahong = (200000 * 0.02 + (500000 - 200000)*0.05) + (doanhso - 500000)*0.1
+                        }
+            document.getElementById("hoahong").innerHTML = hoahong + " VNĐ";
+        }
+    </script>
+</body>
+</html>

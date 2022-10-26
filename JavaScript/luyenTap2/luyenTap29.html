@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra cạnh tam giác</title>
+</head>
+<body>
+    <span>Nhập a:</span>
+    <input type="number" id="a"><br><br>
+    <span>Nhập b:</span>
+    <input type="number" id="b"><br><br>
+    <span>Nhập c:</span>
+    <input type="number" id="c"><br><br>
+    <button onclick="calculate()">Kiểm tra</button>
+    <p id="canh"></p>
+    <script>
+        function calculate() {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            let c = Number(document.getElementById("c").value);
+            if (a <= 0 || b <= 0  || c <= 0) {
+                document.getElementById("canh").innerText = "3 cạnh a, b, c không phải là 3 cạnh của tam giác";
+            }else if ((a + b) > c && (a + c) > b && (b + c) > a) {
+                    document.getElementById("canh").innerText = "3 cạnh a, b, c là 3 cạnh của tam giác";
+                    }else{ 
+                    document.getElementById("canh").innerText = "3 cạnh a, b, c không phải  là 3 cạnh của tam giác";
+                    }
+            }
+    </script>
+</body>
+</html>

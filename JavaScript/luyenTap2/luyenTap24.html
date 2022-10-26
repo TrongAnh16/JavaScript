@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình chữ nhật</title>
+</head>
+<body>
+    <span>Nhập chiều dài (m):</span>
+    <input type="number" id="dai"><br><br>
+    <span>Nhập chiều rộng (m):</span>
+    <input type="number" id="rong"><br><br>
+    <button onclick="calculate()">Tính toán</button>
+    <p id="dientich"></p>
+    <script>
+    function calculate() {
+        let dai = document.getElementById("dai").value;
+        let rong = document.getElementById("rong").value;
+        let dientich;
+        dientich = dai*rong;
+        document.getElementById("dientich").innerHTML = "Diện tích hình chữ nhật với chiều dài = "+ dai + " m  và chiều rộng "+ rong + " m là: "+ dientich + " mét vuông";
+    }
+    </script>
+</body>
+</html>

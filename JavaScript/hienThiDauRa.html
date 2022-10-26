@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đầu ra</title>
+  </head>
+
+  <body>
+    <button type="button" onclick="alert('Hello');">Click me</button>
+
+    <div>
+      <p id="a"></p>
+      <button type="button" onclick="ee()">Click me</button>
+    </div>
+
+    <div id="settag">
+      <button type="button" onclick="setTag()">Click me</button>
+    </div>
+    <div id="b">
+        <button type="button" onclick="showMessege()">Click me</button> 
+    </div>
+  </body>
+  <script>
+    function setTag () {
+        document.getElementById("settag").innerHTML = "<p>Replaced</p>"
+    }
+    function ee(){
+       document.getElementById("a").innerHTML='heloae'
+    }
+    function showMessege(){
+        console.log('Hello');
+    }
+  </script>
+</html>
