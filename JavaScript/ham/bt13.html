@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1.3</title>
+</head>
+<body>
+    <script>
+        function numbers(num1, num2){
+        let result = true;
+        if (num1 > num2) {
+            result = true;
+        }else{
+            result = false;
+        }
+        return result;
+        }
+        let num1 = Number(prompt("Enter a num1: "));
+        let num2 = Number(prompt("Enter a num2: "));
+        if (numbers(num1, num2) == true) {
+            alert(`${num1} lớn hơn ${num2}`);
+        }else{
+            alert(`Tổng của ${num1} và ${num2} là: ${num1 + num2}`);
+        }
+    </script>
+</body>
+</html>
