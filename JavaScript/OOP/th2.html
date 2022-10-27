@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành 2</title>
+</head>
+<body>
+    <script>
+        let Circle = function(radius) {
+            this.radius = radius;
+
+            this.getRadius = function(){
+                return this.radius;
+            }
+            this.getArea = function(){
+                return Math.PI*radius*radius;
+            }  
+        };
+        let circle = new Circle(2);
+        let radius = circle.getRadius();
+        let area = circle.getArea();
+        alert(`Radius is:  ${radius} and area is:  ${area}`);
+        let circleOther = new Circle(5);
+        let radiusOther = circleOther.getRadius();
+        let areaOther = circleOther.getArea();
+        alert(`Radius is: ${radiusOther} and area is: ${areaOther}`);
+    </script>
+</body>
+</html>
