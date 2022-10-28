@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build the Rectangle</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" >
+    </canvas>
+    <p id="show"></p>
+    <p id="result"></p>
+    <script>
+       function myRectangle(height, width) {
+        this.height = height;
+        this.width = width;
+
+        this.getHeight = function () {
+          return this.height;
+        };
+        this.getWidth = function () {
+          return this.width;
+        };
+        this.getArea = function () {
+          return this.height * this.width;
+        };
+        this.getPerimeter = function () {
+          return (this.height + this.width) * 2;
+        };
+        this.setHeight = function (height) {
+          this.height = height;
+        };
+        this.setWidth = function (width) {
+          this.width = width;
+        };
+      };
+
+      function createRectangle(create) {
+        myCanvas.width = create.width;
+        myCanvas.height = create.height;
+        myCanvas.style.border = "1px solid red";
+      }
+      let height = Number(prompt("Enter the height of the rectangle:"))
+      let width = Number(prompt("Enter the width of the rectangle:"));
+      let rec = new myRectangle(height, width);
+    
+      createRectangle(rec);
+      let area = rec.getArea();
+      let perimeter = rec.getPerimeter();
+      document.getElementById("result").innerHTML = `<br> Area: ${area} and perimeter: ${perimeter}`;
+
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var grd = ctx.createLinearGradient(0, 0, width, 0);
+      grd.addColorStop(0, "red");
+      grd.addColorStop(1, "white");
+
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, width, height);
+
+    </script>
+  </body>
+</html>

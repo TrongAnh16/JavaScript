@@ -29,7 +29,7 @@
         var green = getRandomHex();
         var blue = getRandomHex();
         return "rgb(" + red + "," + blue + "," + green + ")";
-      }
+      };
 
       function createCircle() {
         var ctx = document.getElementById("myCanvas").getContext("2d");
@@ -42,7 +42,8 @@
         ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
         ctx.fillStyle = color;
         ctx.fill();
-      }
+      };
+      
       setInterval(function() {
         createCircle()
       },50
