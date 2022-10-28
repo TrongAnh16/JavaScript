@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+<body>
+    <script>
+        function myTemperature(celcius) {
+            this.celcius = celcius;
+            
+            this.getF = function() {
+                return 1.8*this.celcius + 32;
+            }
+            this.getKenvin = function() {
+                return this.celcius + 273.15;
+            }
+        }
+        let temp = new myTemperature(25);
+
+        document.write(`25 độ C bằng:  ${temp.getF()}  độ F <br> và bằng ${temp.getKenvin()} độ Kenvin`);
+
+    </script>
+</body>
+</html>
