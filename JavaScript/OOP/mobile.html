@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Phone</title>
+</head>
+<body>
+    <script>
+        class MobilePhone{
+            constructor (name) {
+                this.battery = Math.floor(Math.random() * 101);
+                this.name = name;
+                this.typingMessage = "";
+                this.isOn = false;
+                this.ibMessage = [];
+                this.sentMessage = [];
+            }
+            getIbMessage() {
+                return this.ibMessage;
+            }
+
+            getSentMessage() {
+                return this.sentMessage;
+            }
+
+            checkStatus() {
+                if (!this.isOn) {
+                    console.log(`${this.name} is power off`);
+                    return;
+                }
+                if (this.battery < 10) {
+                    this.turnOff();
+                    console.log(`${this.name} is low battery`);
+                }
+            }
+
+            turnOn() {
+                if (this.battery > 0) {
+                    if (this.isOn) {
+                    console.log(`${this.name} is already power on`);
+                }else{
+                    this.isOn = true;
+                    console.log(`Turned on ${this.name}`);
+                }
+            }else{
+                console.log(`Low battery`);
+            }
+            }
+
+            
+            turnOff() {
+                if (this.isOn) {
+                    this.isOn = false;
+                    console.log(`Turn off ${this.name}`);
+                }else{
+                    console.log(`${this.name} is already powered off`);
+                }
+            }
+
+            charge() {
+                if(!this.isOn) {
+                    this.isOn();
+                    console.log("Phone is charging");
+                    this.battery += 5;
+                    console.log(`Phone battery is ${this.battery}`);
+                    if(this.battery = 100) {
+                        console.log("Phone is full charge");
+                    }
+                }else{
+                    console.log("Phone is charging");
+                    this.battery += 5;
+                    console.log(`Phone battery is ${this.battery}`);
+                }
+            }
+            
+            typeMessage(message) {
+                if(this.isOn) {
+                    this.checkStatus();
+                    this.typingMessage += message;
+                    this.battery -= 10;
+                    this.checkStatus();
+                }else{
+                    console.log(`${this.name} is powered off`);
+                }
+            }
+
+            sendMessage(address) {
+                if(this.isOn) {
+                    this.checkStatus();
+                    console.log(`${this.name}: Message is sent to ${address.name}`);
+                    address.receiveMessage(this.typingMessage, this.name);
+                    this.sentMessage.push({
+                        sentTo: address.name,
+                        message: this.typingMessage,
+                    });
+                    this.typingMessage = "";
+                    this.battery -= 10;
+                    this.checkStatus();
+                }else{
+                    console.log(`${this.name} is powered off`);
+                }
+            }
+            receiveMessage(message, sentPhone) {
+                if(this.isOn) {
+                    this.checkStatus();
+                    console.log(
+                        `${this.name}: A new message is received from ${sentPhone}:`,
+                    );
+                    console.log(message);
+                    this.ibMessage.push({receivedFrom: sentPhone, message:message});
+                    this.battery -= 10;
+                    this.checkStatus();
+                }else{
+                    console.log(`${this.name} is powered off`);
+                }
+            }
+        }
+        let iPhone = new MobilePhone("iPhone");
+        let nokia = new MobilePhone("nokia");
+        iPhone.turnOn();
+        nokia.turnOn();
+        iPhone.typeMessage("Ăn cơm chưa");
+        iPhone.sendMessage(nokia);
+        iPhone.typeMessage("Anh nhớ em");
+        iPhone.sendMessage(nokia);
+        iPhone.checkStatus();
+        let timerID = setTimeout(() => {
+            nokia.typeMessage("Chúc em ngủ ngon!");
+            nokia.sendMessage(iPhone);
+            nokia.typeMessage("Anh cũng ngủ ngon nhé!"); 
+            nokia.sendMessage(iPhone);
+            return clearTimeout(timerID);
+        }, 5000);
+    </script>
+</body>
+</html>
